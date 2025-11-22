@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
 
           {/* Heading */}
           <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
-             Hey ! I'm Sathwik <span className="wave">👋</span>
+             Sathwik's Here<span className="wave">👋</span>
           </h1>
 
           {/* Sub heading */}
