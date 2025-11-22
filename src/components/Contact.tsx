@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaGithub, FaLinkedin, FaPaperPlane } from 'react-icons/fa';
+import { SiLeetcode, SiCodechef } from 'react-icons/si';
 import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
@@ -38,17 +39,15 @@ const Contact: React.FC = () => {
 
     try {
       await emailjs.sendForm(
-        'service_ogc697d',    
-        'template_adhlpqs',  
-        formRef.current!,     
-        'XvS_Tl7ws8lnInT7q'   
+        'service_ogc697d',
+        'template_adhlpqs',
+        formRef.current!,
+        'XvS_Tl7ws8lnInT7q'
       );
 
       setIsSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
-
       setTimeout(() => setIsSubmitted(false), 5000);
-
     } catch (err) {
       console.error('EmailJS error:', err);
       setError('Failed to send message. Please try again.');
@@ -66,6 +65,7 @@ const Contact: React.FC = () => {
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Contact Info */}
           <div>
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">Contact Information</h3>
             <div className="space-y-6">
@@ -102,6 +102,8 @@ const Contact: React.FC = () => {
                   </a>
                 </div>
               </div>
+
+              {/* Social Links */}
               <div className="pt-4">
                 <h4 className="font-medium text-gray-800 mb-3">Connect with me</h4>
                 <div className="flex space-x-4">
@@ -113,10 +115,20 @@ const Contact: React.FC = () => {
                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-blue-100 hover:text-blue-600 transition-colors">
                     <FaLinkedin className="w-5 h-5" />
                   </a>
+                  <a href="https://leetcode.com/u/pedapati_sathwik/" target="_blank" rel="noopener noreferrer"
+                     className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-blue-100 hover:text-blue-600 transition-colors">
+                    <SiLeetcode className="w-5 h-5" />
+                  </a>
+                  <a href="https://www.codechef.com/users/sathwi_5d0" target="_blank" rel="noopener noreferrer"
+                     className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-blue-100 hover:text-blue-600 transition-colors">
+                    <SiCodechef className="w-5 h-5" />
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Contact Form */}
           <div>
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">Send Me a Message</h3>
 
