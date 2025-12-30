@@ -1,1 +1,1 @@
-# Sathwik Pedapati Portfolio
+# Pedapati Portfolio
